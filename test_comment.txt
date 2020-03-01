@@ -1,0 +1,9 @@
+min_point_number_for_plot=3
+end_of_python_code
+# sans colonne de commentaire
+        	3	3	1	2	2
+date    	HP	HC	eau	chaud	froid
+20130930	6000	7000	332	2885	4446
+20140504	6637	8329	350		4500
+20140605	7000	9000	400	3779	
+20150404	7500	9500	420	4200	4700
