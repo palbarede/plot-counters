@@ -13,7 +13,7 @@ from redress import redress
 from renumber import renumber
 from ScrollableWindow import ScrollableWindow
 
-fname = sys.argv[1]
+fname = sys.argv[1] # direct settings of fname on example for testing in ipyhton
 #fname='av_des_Cigales.txt'
 #fname='av_Jules_Cantini.txt'
 #fname='res_Valvert.txt'
