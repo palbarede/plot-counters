@@ -3,25 +3,25 @@ Requires python3.
 Usage (in Unix shell for example) : 
 % plot_counters.py rue_Jean_Martin.txt
 
-Example input file: *.txt.
+Example input data file: *.txt.
   
-Example output graphics *.png.
+Example output graphics file *.png.
 
-Any counter series must be increasing (not strictly), unless the counter has been changed someday.  The program detects this and downshifts older data for continuity with newer data (hence negative values are possible), see redress.py.  A warning is printed for each downshift change.
+Any counter series must be increasing (not strictly), unless the counter is changed some day.  The program detects this and downshifts older data for continuity with newer data (hence negative values are possible on plot).  A warning is printed for each downshift, so that the user has a chance to check if the non increasing series is his own error in copying data rather than actual counter change.
 
-Missing data are allowed (null in data file, yielding 'nan' in pandas DataFrame).
+Missing data (void in data file) are allowed (yielding 'nan' in pandas DataFrame).
 
-Some settings are in plot_counters.py.
+Some default settings are in plot_counters.py.
 
 Data file syntax:
 
-* There must be a line beginning with end_of_python_code.  The text before this line will be executed as python code.  This is useful to pass file only settings.
+* There must be a line beginning with 'end_of_python_code'.  The text before this line will be executed as python code.  This is useful for file settings (overriding defaults).
 
-* Column separator: \t (TAB) (can be set).  Additional spaces are always permitted for better alignment in the text editor.
+* Column separator: TAB (sep='\t').  Additional spaces are permitted for better alignment in text editor.
 
 * First column must contain date in format YYYYMMDD.
 
-* On top of each column write subplot number (int >= 1) or 0 if not to plot (e. g. comments).  Subplots will appear as 1, 2, 3... from top to bottom.  
+* On top of each column (except the first) must be subplot number (int >= 1) or 0 if not to plot (e. g. comments).  Subplots will appear in this order from top to bottom.  
 
 Common errors in data file:
 
@@ -31,7 +31,7 @@ Common errors in data file:
 
 * duplicated date.
 
-A data file must remaining easy to read and write in text editor.
+Data file must remain readable and writable with only text editor.
 
 To do :
 
